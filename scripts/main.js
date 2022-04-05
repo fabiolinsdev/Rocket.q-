@@ -27,9 +27,10 @@ const deleteButton =  document.querySelectorAll(".actions a.delete")
       const slug = check ? "check" : "delete"
 
       const roomID = document.querySelector("room-id").dataset.id
+      const questionId = event.target.dataset.id
 
       const form = document.querySelector (".modal form")
-      form.setAttribute("action", `/room/${roomID}/:question/${slug}`)
+      form.setAttribute("action", `/question/${roomID}/${questionId}/${slug}`)
 
       modalTitle.innerHTML = `${text} esta pergunta`
       modalDescription.innerHTML =  `Tem certeza que deseja ${text.toLowerCase()} esta pergunta?`
